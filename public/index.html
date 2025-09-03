@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+	<meta name="generator" content="Hugo 0.148.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+
+  Unicert Project
+  
+
+This is the documentation and open-source space for the Unicert project.
+We provide the main analysis scripts and datasets used in our paper, &ldquo;Analyzing Compliance and Complications of Integrating Internationalized X.509 Certificates.&rdquo;
+PublicationUnder review
+
+
+  Introduction
+  
+
+The PKI system supports global use with X.509 certificates, integrating internationalized content like IDNs and multilingual text, referred to as Unicerts. This integration introduces complexity in Unicert issuance and usage.
+Past incidents showed that poor Unicode handling can cause security risks, including spoofing and remote code execution,  yet threats specific to PKI and Unicerts remain underexplored.
+This paper presents the first large-scale study of Unicerts, examining both issuance and parsing compliance.
+By analyzing 34.8M Unicerts from CT logs and 9 mainstream TLS libraries, we found the PKI ecosystem struggles with adopting Unicode.
+On the issuing side, 373 CAs issued 249k (0.72%) non-compliant Unicerts due to weak validation on character ranges, normalization, and formatting, 65.3% of which were from publicly trusted CAs.
+These issues arise from overly complex standard requirements.
+On the parsing side, we found that libraries (e.g., GnuTLS and PyOpenSSL) exhibited issues in decoding and handling special characters, such as incompatible decoding and improper escaping, which could lead to incorrect entity extraction or subfield forgery.
+We further empirically identified three threat surfaces: user spoofing, CT monitor misleading, and traffic obfuscation. Finally, we analyzed root causes and proposed recommendations to enhance Unicert compliance in the global PKI ecosystem.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/">
+  <meta property="og:site_name" content="Unicert Project">
+  <meta property="og:title" content="Introduction">
+  <meta property="og:description" content="Unicert Project This is the documentation and open-source space for the Unicert project. We provide the main analysis scripts and datasets used in our paper, “Analyzing Compliance and Complications of Integrating Internationalized X.509 Certificates.”
+PublicationUnder review Introduction The PKI system supports global use with X.509 certificates, integrating internationalized content like IDNs and multilingual text, referred to as Unicerts. This integration introduces complexity in Unicert issuance and usage. Past incidents showed that poor Unicode handling can cause security risks, including spoofing and remote code execution, yet threats specific to PKI and Unicerts remain underexplored. This paper presents the first large-scale study of Unicerts, examining both issuance and parsing compliance. By analyzing 34.8M Unicerts from CT logs and 9 mainstream TLS libraries, we found the PKI ecosystem struggles with adopting Unicode. On the issuing side, 373 CAs issued 249k (0.72%) non-compliant Unicerts due to weak validation on character ranges, normalization, and formatting, 65.3% of which were from publicly trusted CAs. These issues arise from overly complex standard requirements. On the parsing side, we found that libraries (e.g., GnuTLS and PyOpenSSL) exhibited issues in decoding and handling special characters, such as incompatible decoding and improper escaping, which could lead to incorrect entity extraction or subfield forgery. We further empirically identified three threat surfaces: user spoofing, CT monitor misleading, and traffic obfuscation. Finally, we analyzed root causes and proposed recommendations to enhance Unicert compliance in the global PKI ecosystem.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+<title>Introduction | Unicert Project</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/">
+<link rel="stylesheet" href="/book.min.d60d65c9fd57805d29fb9d7109cb03a93c46852bac9bb8cdfec366ee739b3605.css" integrity="sha256-1g1lyf1XgF0p&#43;51xCcsDqTxGhSusm7jN/sNm7nObNgU=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.fdf7a657d193bac389008ae254486d757c18ae5022ebb08ee7344a7da73b1f00.js" integrity="sha256-/femV9GTusOJAIriVEhtdXwYrlAi67CO5zRKfac7HwA=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/index.xml" title="Unicert Project" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-home book-type-page">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  
+
+
+
+
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><!-- raw HTML omitted -->
+<h1 id="unicert-project">
+  Unicert Project
+  
+</h1>
+<p>This is the documentation and open-source space for the Unicert project.
+We provide the main analysis scripts and datasets used in our paper, &ldquo;Analyzing Compliance and Complications of Integrating Internationalized X.509 Certificates.&rdquo;</p>
+<span class="book-badge success"><span class="book-badge-title">Publication</span><span class="book-badge-value">Under review</span></span>
+<!-- raw HTML omitted -->
+<h2 id="introduction">
+  Introduction
+  
+</h2>
+<p>The PKI system supports global use with X.509 certificates, integrating internationalized content like IDNs and multilingual text, referred to as <code>Unicerts</code>. This integration introduces complexity in Unicert issuance and usage.
+Past incidents showed that poor Unicode handling can cause security risks, including spoofing and remote code execution,  yet threats specific to PKI and Unicerts remain underexplored.
+This paper presents the first large-scale study of Unicerts, examining both issuance and parsing compliance.
+By analyzing 34.8M Unicerts from CT logs and 9 mainstream TLS libraries, we found the PKI ecosystem struggles with adopting Unicode.
+On the issuing side, 373 CAs issued 249k (0.72%) non-compliant Unicerts due to weak validation on character ranges, normalization, and formatting, 65.3% of which were from publicly trusted CAs.
+These issues arise from overly complex standard requirements.
+On the parsing side, we found that libraries (e.g., GnuTLS and PyOpenSSL) exhibited issues in decoding and handling special characters, such as incompatible decoding and improper escaping, which could lead to incorrect entity extraction or subfield forgery.
+We further empirically identified three threat surfaces: user spoofing, CT monitor misleading, and traffic obfuscation. Finally, we analyzed root causes and proposed recommendations to enhance Unicert compliance in the global PKI ecosystem.</p>
+<a  href="/docs/introduction/"   class="book-btn">Details</a>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

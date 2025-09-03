@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unicert Project</title>
+    <link>//localhost:1313/docs/introduction/method/</link>
+    <description>Recent content on Unicert Project</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="//localhost:1313/docs/introduction/method/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unicert Compliance Analysis</title>
+      <link>//localhost:1313/docs/introduction/method/1-unicert-compliance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/introduction/method/1-unicert-compliance/</guid>
+      <description>&lt;h1 id=&#34;unicert-compliance-analysis&#34;&gt;&#xA;  Unicert Compliance Analysis&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#unicert-compliance-analysis&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>TLS Implementation Analysis</title>
+      <link>//localhost:1313/docs/introduction/method/2-tls-implementation-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/introduction/method/2-tls-implementation-analysis/</guid>
+      <description>&lt;h1 id=&#34;tls-implementation-analysis&#34;&gt;&#xA;  TLS Implementation Analysis&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#tls-implementation-analysis&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;</description>
+    </item>
+  </channel>
+</rss>
