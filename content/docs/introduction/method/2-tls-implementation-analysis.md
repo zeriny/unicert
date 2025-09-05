@@ -9,4 +9,4 @@ bookToc: false
 
 ## Abstraction of Certificate Parsing Flow
 
-<img src="./cert_parsing_dtree.pdf" width="500" alt="Cert Parsing Flow">
+![CertParsingFlow](https://zeriny.github.io/unicert/figs/cert_parsing_dtree.pdf)
