@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unicert Project</title>
-    <link>//localhost:1313/docs/introduction/method/</link>
+    <link>http://localhost:1313/docs/introduction/method/</link>
     <description>Recent content on Unicert Project</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="//localhost:1313/docs/introduction/method/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/docs/introduction/method/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Unicert Compliance Analysis</title>
-      <link>//localhost:1313/docs/introduction/method/1-unicert-compliance/</link>
+      <title>Specification Analysis</title>
+      <link>http://localhost:1313/docs/introduction/method/1-unicert-compliance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/introduction/method/1-unicert-compliance/</guid>
-      <description>&lt;h1 id=&#34;unicert-compliance-analysis&#34;&gt;&#xA;  Unicert Compliance Analysis&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#unicert-compliance-analysis&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;</description>
+      <guid>http://localhost:1313/docs/introduction/method/1-unicert-compliance/</guid>
+      <description>&lt;h1 id=&#34;specification-analysis&#34;&gt;&#xA;  Specification Analysis&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#specification-analysis&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;&#xA;&lt;p&gt;In this work, we explore the use of LLMs to interpret context-dependent rules and nested structural constraints in PKI systems and X.509 certificates. We acknowledge that these efforts are still at an early stage and are working to further refine them. We welcome feedback and suggestions from the community and provide a brief overview of our current approach below.&lt;/p&gt;&#xA;&lt;h2 id=&#34;specification-scope&#34;&gt;&#xA;  Specification Scope&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#specification-scope&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The CA/Browser community enforces constraints primarily through the Baseline Requirements (BRs), and some CAs additionally check compliance with RFC 5280 before issuing certificates. However, certain domain-specific constraints not explicitly covered by RFC 5280 or the BRs also play an important role in PKI security. To address this, we considered all documents relevant to Unicert issuance, parsing, and validation. Ultimately, our analysis shows that RFC 5280 and the BRs are the most decisive, but our scope also included the PKIX specifications (RFC 3280, 5280), their updates (RFC 9549, 9598, 6818), reference documents (RFC 3490, 1034, 3454), related standards (RFC 6125, the IDNA suite), and the CA/B Forum Policy.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TLS Implementation Analysis</title>
-      <link>//localhost:1313/docs/introduction/method/2-tls-implementation-analysis/</link>
+      <link>http://localhost:1313/docs/introduction/method/2-tls-implementation-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/introduction/method/2-tls-implementation-analysis/</guid>
+      <guid>http://localhost:1313/docs/introduction/method/2-tls-implementation-analysis/</guid>
       <description>&lt;h1 id=&#34;tls-implementation-analysis&#34;&gt;&#xA;  TLS Implementation Analysis&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#tls-implementation-analysis&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;</description>
     </item>
   </channel>

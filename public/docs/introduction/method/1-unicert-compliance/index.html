@@ -4,27 +4,36 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  Unicert Compliance Analysis
+  Specification Analysis
   
   #
   
-">
+
+In this work, we explore the use of LLMs to interpret context-dependent rules and nested structural constraints in PKI systems and X.509 certificates. We acknowledge that these efforts are still at an early stage and are working to further refine them. We welcome feedback and suggestions from the community and provide a brief overview of our current approach below.
+
+  Specification Scope
+  
+  #
+  
+
+The CA/Browser community enforces constraints primarily through the Baseline Requirements (BRs), and some CAs additionally check compliance with RFC 5280 before issuing certificates. However, certain domain-specific constraints not explicitly covered by RFC 5280 or the BRs also play an important role in PKI security. To address this, we considered all documents relevant to Unicert issuance, parsing, and validation. Ultimately, our analysis shows that RFC 5280 and the BRs are the most decisive, but our scope also included the PKIX specifications (RFC 3280, 5280), their updates (RFC 9549, 9598, 6818), reference documents (RFC 3490, 1034, 3454), related standards (RFC 6125, the IDNA suite), and the CA/B Forum Policy.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/introduction/method/1-unicert-compliance/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/introduction/method/1-unicert-compliance/">
   <meta property="og:site_name" content="Unicert Project">
-  <meta property="og:title" content="Unicert Compliance Analysis">
-  <meta property="og:description" content="Unicert Compliance Analysis #">
+  <meta property="og:title" content="Specification Analysis">
+  <meta property="og:description" content="Specification Analysis # In this work, we explore the use of LLMs to interpret context-dependent rules and nested structural constraints in PKI systems and X.509 certificates. We acknowledge that these efforts are still at an early stage and are working to further refine them. We welcome feedback and suggestions from the community and provide a brief overview of our current approach below.
+Specification Scope # The CA/Browser community enforces constraints primarily through the Baseline Requirements (BRs), and some CAs additionally check compliance with RFC 5280 before issuing certificates. However, certain domain-specific constraints not explicitly covered by RFC 5280 or the BRs also play an important role in PKI security. To address this, we considered all documents relevant to Unicert issuance, parsing, and validation. Ultimately, our analysis shows that RFC 5280 and the BRs are the most decisive, but our scope also included the PKIX specifications (RFC 3280, 5280), their updates (RFC 9549, 9598, 6818), reference documents (RFC 3490, 1034, 3454), related standards (RFC 6125, the IDNA suite), and the CA/B Forum Policy.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Unicert Compliance Analysis | Unicert Project</title>
+<title>Specification Analysis | Unicert Project</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="//localhost:1313/docs/introduction/method/1-unicert-compliance/">
+<link rel="canonical" href="http://localhost:1313/docs/introduction/method/1-unicert-compliance/">
 <link rel="stylesheet" href="/book.min.d60d65c9fd57805d29fb9d7109cb03a93c46852bac9bb8cdfec366ee739b3605.css" integrity="sha256-1g1lyf1XgF0p&#43;51xCcsDqTxGhSusm7jN/sNm7nObNgU=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.fdf7a657d193bac389008ae254486d757c18ae5022ebb08ee7344a7da73b1f00.js" integrity="sha256-/femV9GTusOJAIriVEhtdXwYrlAi67CO5zRKfac7HwA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c8535f643f366b842087cd084cbe07d0efd8ec9a8c189a043cd2eb7e6bf12d9b.js" integrity="sha256-yFNfZD82a4Qgh80ITL4H0O/Y7JqMGJoEPNLrfmvxLZs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -103,7 +112,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/introduction/method/1-unicert-compliance/" class="active">Unicert Compliance Analysis</a>
+    <a href="/docs/introduction/method/1-unicert-compliance/" class="active">Specification Analysis</a>
   
 
         </li>
@@ -212,9 +221,11 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Unicert Compliance Analysis</h3>
+  <h3>Specification Analysis</h3>
 
   <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -224,7 +235,12 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#specification-scope">Specification Scope</a></li>
+    <li><a href="#analysis-steps">Analysis Steps</a></li>
+  </ul>
+</nav>
 
 
 
@@ -235,12 +251,49 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="unicert-compliance-analysis">
-  Unicert Compliance Analysis
+  <article class="markdown book-article"><h1 id="specification-analysis">
+  Specification Analysis
   
-  <a class="anchor" href="#unicert-compliance-analysis">#</a>
+  <a class="anchor" href="#specification-analysis">#</a>
   
 </h1>
+<p>In this work, we explore the use of LLMs to interpret context-dependent rules and nested structural constraints in PKI systems and X.509 certificates. We acknowledge that these efforts are still at an early stage and are working to further refine them. We welcome feedback and suggestions from the community and provide a brief overview of our current approach below.</p>
+<h2 id="specification-scope">
+  Specification Scope
+  
+  <a class="anchor" href="#specification-scope">#</a>
+  
+</h2>
+<p>The CA/Browser community enforces constraints primarily through the Baseline Requirements (BRs), and some CAs additionally check compliance with RFC 5280 before issuing certificates. However, certain domain-specific constraints not explicitly covered by RFC 5280 or the BRs also play an important role in PKI security. To address this, we considered all documents relevant to Unicert issuance, parsing, and validation. Ultimately, our analysis shows that RFC 5280 and the BRs are the most decisive, but our scope also included the PKIX specifications (RFC 3280, 5280), their updates (RFC 9549, 9598, 6818), reference documents (RFC 3490, 1034, 3454), related standards (RFC 6125, the IDNA suite), and the CA/B Forum Policy.</p>
+<p><img src="https://zeriny.github.io/unicert/figs/rfc-dependency.png" alt="rfc-dependency" /></p>
+<h2 id="analysis-steps">
+  Analysis Steps
+  
+  <a class="anchor" href="#analysis-steps">#</a>
+  
+</h2>
+<!-- raw HTML omitted -->
+<ol>
+<li>
+<p><strong>Extracting relevant standards and incorporating references to reflect their evolution and interdependencies.</strong>
+We filtered field-related sections from the desired documents using a set of specified keywords. We then refined the filtered sections by incorporating references from other specifications (e.g., domain name formats in RFC 1034) and replacing the outdated sections with updates from newer RFCs.</p>
+</li>
+<li>
+<p><strong>Improving LLM comprehension of background knowledge.</strong>
+Inspired by a prior <code>background-augmentation</code> method, we incorporated the refined sections as background knowledge to enhance RFCGPT&rsquo;s understanding of Unicert. Since CA/B BRs are not in RFCGPT’s pretraining data, we added their certificate profile content as supplemental knowledge. All knowledge was extracted as line-based text and placed in the <code>background context</code> fields of the prompt templates. For example, rules listed in tables were reformatted into comma-separated lines.</p>
+</li>
+<li>
+<p><strong>Prompting the LLM to generate certificate field requirements.</strong>
+We used few-shot learning to prompt the LLM to extract two types of requirements for each certificate field:
+(1) valid encoding types and data structures, and
+(2) constraints on encoding and formatting.
+We excluded semantic constraints like field presence, absence, or criticality.
+Prompts included input–output examples to guide the LLM in generating requirements in a structured format (e.g., JSON), and directed it to reply <code>No</code> when standards lacked relevant details, avoiding fabrication.</p>
+</li>
+</ol>
+<p><img src="https://zeriny.github.io/unicert/figs/prompt1-datastructure.pdf" alt="prompt-1" />
+<img src="https://zeriny.github.io/unicert/figs/prompt2-requirements.pdf" alt="prompt-2" /></p>
+<!-- raw HTML omitted -->
 </article>
  
       
@@ -303,6 +356,22 @@ https://github.com/alex-shpak/hugo-book
     </div>
 
     
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#specification-scope">Specification Scope</a></li>
+    <li><a href="#analysis-steps">Analysis Steps</a></li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
 
  
   </main>
