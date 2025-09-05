@@ -9,7 +9,7 @@ In this work, we explore the use of LLMs to interpret context-dependent rules an
 ## Specification Scope
 The CA/Browser community enforces constraints primarily through the Baseline Requirements (BRs), and some CAs additionally check compliance with RFC 5280 before issuing certificates. However, certain domain-specific constraints not explicitly covered by RFC 5280 or the BRs also play an important role in PKI security. To address this, we considered all documents relevant to Unicert issuance, parsing, and validation. Ultimately, our analysis shows that RFC 5280 and the BRs are the most decisive, but our scope also included the PKIX specifications (RFC 3280, 5280), their updates (RFC 9549, 9598, 6818), reference documents (RFC 3490, 1034, 3454), related standards (RFC 6125, the IDNA suite), and the CA/B Forum Policy.
 
-![rfc-dependency](https://zeriny.github.io/unicert/figs/rfc-dependency.png)
+<img src="https://zeriny.github.io/unicert/figs/rfc-dependency.png" width="500" alt="Documentation Dependency">
 
 ## Analysis Steps
 
@@ -29,8 +29,7 @@ We excluded semantic constraints like field presence, absence, or criticality.
 Prompts included input–output examples to guide the LLM in generating requirements in a structured format (e.g., JSON), and directed it to reply ``No`` when standards lacked relevant details, avoiding fabrication.
 
 
-![prompt-1](https://zeriny.github.io/unicert/figs/prompt1-datastructure.pdf)
-![prompt-2](https://zeriny.github.io/unicert/figs/prompt2-requirements.pdf)
-
+<img src="https://zeriny.github.io/unicert/figs/prompt1-datastructure.pdf" width="500" alt="Prompt1">
+<img src="https://zeriny.github.io/unicert/figs/prompt2-requirements.pdf" width="500" alt="Prompt2">
 
 {{% /steps %}}
