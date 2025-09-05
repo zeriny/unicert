@@ -3,26 +3,31 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-  Unicert Linter
+<meta name="description" content="UniCheckSource Code
+
+  UniCheck: A Zlint-based Certificate Compliance Checker
   
   #
   
 
-To be released &hellip;
 
-  Issuance Compliance Checking Results
+  Overview
   
   #
   
-">
+
+This repository contains UniCheck, a tool developed to investigate whether Unicode Certificates (Unicerts) comply with current standards.
+UniCheck is a customized version of the zlint framework, tailored specifically for our research purposes. It extends zlint&rsquo;s functionality to provide in-depth compliance checks for Unicerts, focusing on aspects not explicitly covered by existing lints.
+Since this tool was designed for a specific academic study, it directly modifies the zlint source code within the vendor directory.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/posts/checking-issuance-compliance/">
   <meta property="og:site_name" content="Unicert Project">
   <meta property="og:title" content="Checking Issuance Compliance">
-  <meta property="og:description" content="Unicert Linter # To be released …
-Issuance Compliance Checking Results #">
+  <meta property="og:description" content="UniCheckSource Code
+UniCheck: A Zlint-based Certificate Compliance Checker # Overview # This repository contains UniCheck, a tool developed to investigate whether Unicode Certificates (Unicerts) comply with current standards.
+UniCheck is a customized version of the zlint framework, tailored specifically for our research purposes. It extends zlint’s functionality to provide in-depth compliance checks for Unicerts, focusing on aspects not explicitly covered by existing lints.
+Since this tool was designed for a specific academic study, it directly modifies the zlint source code within the vendor directory.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -34,7 +39,7 @@ Issuance Compliance Checking Results #">
 <link rel="canonical" href="http://localhost:1313/docs/posts/checking-issuance-compliance/">
 <link rel="stylesheet" href="/book.min.d60d65c9fd57805d29fb9d7109cb03a93c46852bac9bb8cdfec366ee739b3605.css" integrity="sha256-1g1lyf1XgF0p&#43;51xCcsDqTxGhSusm7jN/sNm7nObNgU=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.73a00e3613190142c3b36a2f59d8bbabd5173661982bfc9532f1a3db82e6df1c.js" integrity="sha256-c6AONhMZAULDs2ovWdi7q9UXNmGYK/yVMvGj24Lm3xw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.574779d45a74605f458b5cc16b40260046db8762844a148ad33499e5f4615c44.js" integrity="sha256-V0d51Fp0YF9Fi1zBa0AmAEbbh2KEShSK0zSZ5fRhXEQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -238,10 +243,10 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#unicheck-a-zlint-based-certificate-compliance-checker">UniCheck: A Zlint-based Certificate Compliance Checker</a>
       <ul>
-        <li><a href="#unicert-linter">Unicert Linter</a></li>
-        <li><a href="#issuance-compliance-checking-results">Issuance Compliance Checking Results</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#implementation-details">Implementation Details</a></li>
       </ul>
     </li>
   </ul>
@@ -256,20 +261,111 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h3 id="unicert-linter">
-  Unicert Linter
+  <article class="markdown book-article"><p><a href="https://github.com/zeriny/unicert_checker"><span class="book-badge default"><span class="book-badge-title">UniCheck</span><span class="book-badge-value">Source Code</span></span></a></p>
+<h2 id="unicheck-a-zlint-based-certificate-compliance-checker">
+  UniCheck: A Zlint-based Certificate Compliance Checker
   
-  <a class="anchor" href="#unicert-linter">#</a>
+  <a class="anchor" href="#unicheck-a-zlint-based-certificate-compliance-checker">#</a>
+  
+</h2>
+<h3 id="overview">
+  Overview
+  
+  <a class="anchor" href="#overview">#</a>
   
 </h3>
-<p>To be released &hellip;</p>
-<h3 id="issuance-compliance-checking-results">
-  Issuance Compliance Checking Results
+<p>This repository contains UniCheck, a tool developed to investigate whether Unicode Certificates (Unicerts) comply with current standards.</p>
+<p>UniCheck is a customized version of the <code>zlint</code> framework, tailored specifically for our research purposes. It extends <code>zlint</code>&rsquo;s functionality to provide in-depth compliance checks for Unicerts, focusing on aspects not explicitly covered by existing lints.</p>
+<p>Since this tool was designed for a specific academic study, it directly modifies the <code>zlint</code> source code within the <code>vendor</code> directory.</p>
+<h3 id="implementation-details">
+  Implementation Details
   
-  <a class="anchor" href="#issuance-compliance-checking-results">#</a>
+  <a class="anchor" href="#implementation-details">#</a>
   
 </h3>
-</article>
+<h4 id="1-new-lints-for-unicert-compliance">
+  1. New Lints for Unicert Compliance
+  
+  <a class="anchor" href="#1-new-lints-for-unicert-compliance">#</a>
+  
+</h4>
+<p>We introduced a new directory at <code>vendor/github.com/zmap/zlint/v3/lints/unicheck/</code> to house our custom lints. We also relocated existing lints relevant to checking encoding, format, attribute structure, and value normalization to this dedicated directory for better organization and a streamlined focus.</p>
+<h4 id="2-integration-with-the-lint-registry">
+  2. Integration with the Lint Registry
+  
+  <a class="anchor" href="#2-integration-with-the-lint-registry">#</a>
+  
+</h4>
+<p>To ensure our custom lints are recognized and executed by the <code>zlint</code> framework, we modified the project&rsquo;s configuration to include our new directory in the lint registry. This involved adjusting the <code>config/config.go</code> and <code>vendor/github.com/zmap/zlint/v3/zlint.go</code> files.</p>
+<p>The relevant changes ensure that all lints from our <code>unicheck</code> directory are included during the initialization of the <code>zlint</code> registry.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sourceList</span> <span style="color:#a6e22e">lint</span>.<span style="color:#a6e22e">SourceList</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sourceList</span>.<span style="color:#a6e22e">FromString</span>(<span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">Config</span>.<span style="color:#a6e22e">ZlintIncludeSources</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;invalid includeSources: %v\n&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">registry</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">lint</span>.<span style="color:#a6e22e">GlobalRegistry</span>().<span style="color:#a6e22e">Filter</span>(<span style="color:#a6e22e">lint</span>.<span style="color:#a6e22e">FilterOptions</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">IncludeSources</span>: <span style="color:#a6e22e">sourceList</span>,	})
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;lint registry filter failed to apply: %v\n&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">GlobalZlintRegistry</span> = <span style="color:#a6e22e">registry</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;[+] Included source names:&#34;</span>, <span style="color:#a6e22e">registry</span>.<span style="color:#a6e22e">Sources</span>())
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;[+] Included lints:&#34;</span>, len(<span style="color:#a6e22e">registry</span>.<span style="color:#a6e22e">Names</span>()))
+</span></span></code></pre></div><h4 id="3-usage-as-a-library">
+  3. Usage as a Library
+  
+  <a class="anchor" href="#3-usage-as-a-library">#</a>
+  
+</h4>
+<p>Our application uses the modified <code>zlint</code> framework as a library to perform compliance checks on a single X.509 certificate object. The process involves three main steps:</p>
+<ol>
+<li>
+<p>Decoding: The certificate&rsquo;s PEM string is decoded into a DER block. Error handling is in place to catch any PEM parsing failures.</p>
+</li>
+<li>
+<p>Parsing: The DER bytes are parsed to create an <code>x509</code> certificate object. This step also includes error checks to handle invalid certificate structures.</p>
+</li>
+<li>
+<p>Lint Execution: The <code>zlint.LintCertificateEx</code> function is called on the parsed x509 object, using our customized <code>GlobalZlintRegistry</code>, to execute all relevant lints. The results are then captured and returned in a structured format.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>    <span style="color:#75715e">// First, decode PEM string</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">certDerBlock</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pem</span>.<span style="color:#a6e22e">Decode</span>([]byte(<span style="color:#a6e22e">pemStr</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">certDerBlock</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">MyZlintRes</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Sha1</span>:      <span style="color:#a6e22e">certSha1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Success</span>:   <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ErrorInfo</span>: <span style="color:#e6db74">&#34;Failed to parse PEM block containing the certificate&#34;</span>,
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">resStr</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">res</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Failed to parse PEM block containing the certificate&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">resStr</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Second, parse DER cert bytes and initialized an x509 object</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parsed</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">x509</span>.<span style="color:#a6e22e">ParseCertificate</span>(<span style="color:#a6e22e">certDerBlock</span>.<span style="color:#a6e22e">Bytes</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Unable to parse certificate:&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">MyZlintRes</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Sha1</span>:      <span style="color:#a6e22e">certSha1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Success</span>:   <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ErrorInfo</span>: <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;Unable to parse certificate: %s\n&#34;</span>, <span style="color:#a6e22e">err</span>),
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">resStr</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">res</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">resStr</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Third, excecute zlint for one x509 object</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">zlintResultSet</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">zlint</span>.<span style="color:#a6e22e">LintCertificateEx</span>(<span style="color:#a6e22e">parsed</span>, <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">GlobalZlintRegistry</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">MyZlintRes</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Sha1</span>:     <span style="color:#a6e22e">certSha1</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Success</span>:  <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ZlintRes</span>: <span style="color:#a6e22e">zlintResultSet</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">resStr</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">res</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span></code></pre></div></article>
  
       
 
@@ -333,10 +429,10 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#unicheck-a-zlint-based-certificate-compliance-checker">UniCheck: A Zlint-based Certificate Compliance Checker</a>
       <ul>
-        <li><a href="#unicert-linter">Unicert Linter</a></li>
-        <li><a href="#issuance-compliance-checking-results">Issuance Compliance Checking Results</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#implementation-details">Implementation Details</a></li>
       </ul>
     </li>
   </ul>
