@@ -11,7 +11,7 @@ layout: landing
 This is the documentation and open-source space for the Unicert project.
 We provide the main analysis scripts and datasets used in our paper, "Analyzing Compliance and Complications of Integrating Internationalized X.509 Certificates."
 
-{{< badge style="success" title="Publication" value="Under review" >}} 
+{{< badge style="success" title="Publication" value="ACM IMC 2025" >}} 
 <!-- {{< badge style="default" title="Badge" value="Value" >}} -->
 
 
