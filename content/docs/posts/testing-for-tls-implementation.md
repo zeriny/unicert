@@ -11,6 +11,12 @@ weight: 1
 
 [{{< badge title="TLS Libarary Test Tool" value="Source Code" >}}](https://github.com/Gjfnofalse/Unicert-tls_libs_difftest)
 
+
+## Fix
+- The Go team has resolved the decoding issue; for details, see: golang/go#71862.
+- Oracle has addressed the decoding issue, credited us in their Critical Patch Update (CPU), see https://www.oracle.com/security-alerts/cpuoct2025.html, and assigned CVE-2025-53057 for this vulnerability.
+
+
 ## CertificateGenerator and TestCertificates
 
 We focus on the DN and GeneralName's ASN1String (PrintableString Ia5String UTF8String BMPString) in Subject, Issuer, SAN, IAN, AIA, SIA, cRLDistributionPoints.

@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="TLS Libarary Test ToolSource Code
 
+  Fix
+  
+  #
+  
+
+
+The Go team has resolved the decoding issue; for details, see: golang/go#71862.
+Oracle has addressed the decoding issue, credited us in their Critical Patch Update (CPU), see https://www.oracle.com/security-alerts/cpuoct2025.html, and assigned CVE-2025-53057 for this vulnerability.
+
+
   CertificateGenerator and TestCertificates
   
   #
@@ -18,7 +28,7 @@ For DN, we only focus on these common OIDs: 2.5.4.3, 2.5.4.15, 0.9.2342.19200300
   <meta property="og:site_name" content="Unicert Project">
   <meta property="og:title" content="Testing of TLS Implementations">
   <meta property="og:description" content="TLS Libarary Test ToolSource Code
-CertificateGenerator and TestCertificates # We focus on the DN and GeneralName’s ASN1String (PrintableString Ia5String UTF8String BMPString) in Subject, Issuer, SAN, IAN, AIA, SIA, cRLDistributionPoints.
+Fix # The Go team has resolved the decoding issue; for details, see: golang/go#71862. Oracle has addressed the decoding issue, credited us in their Critical Patch Update (CPU), see https://www.oracle.com/security-alerts/cpuoct2025.html, and assigned CVE-2025-53057 for this vulnerability. CertificateGenerator and TestCertificates # We focus on the DN and GeneralName’s ASN1String (PrintableString Ia5String UTF8String BMPString) in Subject, Issuer, SAN, IAN, AIA, SIA, cRLDistributionPoints.
 For DN, we only focus on these common OIDs: 2.5.4.3, 2.5.4.15, 0.9.2342.19200300.100.1.25, 1.2.840.113549.1.9.1, 2.5.4.7, 2.5.4.11, 2.5.4.10, 2.5.4.5, 2.5.4.8. We want to see how different OID&#43;ASN1String combinations handle characters, so we combine different OIDs and ASN1Strings, and fill them with different characters including all characters from U&#43;0000-U&#43;00FF, plus sampled characters from the remaining Unicode range (randomly selecting one from each block in https://unicode.org/Public/15.0.0/ucd/Blocks.txt). Each certificate will only test one field.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -31,7 +41,7 @@ For DN, we only focus on these common OIDs: 2.5.4.3, 2.5.4.15, 0.9.2342.19200300
 <link rel="canonical" href="http://localhost:1313/docs/posts/testing-for-tls-implementation/">
 <link rel="stylesheet" href="/book.min.d60d65c9fd57805d29fb9d7109cb03a93c46852bac9bb8cdfec366ee739b3605.css" integrity="sha256-1g1lyf1XgF0p&#43;51xCcsDqTxGhSusm7jN/sNm7nObNgU=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.574779d45a74605f458b5cc16b40260046db8762844a148ad33499e5f4615c44.js" integrity="sha256-V0d51Fp0YF9Fi1zBa0AmAEbbh2KEShSK0zSZ5fRhXEQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fa58454bba13a472f922c1568573146361f30c6a16fe2f6ab29a33ac6815cae6.js" integrity="sha256-&#43;lhFS7oTpHL5IsFWhXMUY2HzDGoW/i9qspozrGgVyuY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -235,6 +245,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#fix">Fix</a></li>
     <li><a href="#certificategenerator-and-testcertificates">CertificateGenerator and TestCertificates</a>
       <ul>
         <li><a href="#file-description">File Description</a></li>
@@ -264,6 +275,16 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown book-article"><p><a href="https://github.com/Gjfnofalse/Unicert-tls_libs_difftest"><span class="book-badge default"><span class="book-badge-title">TLS Libarary Test Tool</span><span class="book-badge-value">Source Code</span></span></a></p>
+<h2 id="fix">
+  Fix
+  
+  <a class="anchor" href="#fix">#</a>
+  
+</h2>
+<ul>
+<li>The Go team has resolved the decoding issue; for details, see: golang/go#71862.</li>
+<li>Oracle has addressed the decoding issue, credited us in their Critical Patch Update (CPU), see <a href="https://www.oracle.com/security-alerts/cpuoct2025.html">https://www.oracle.com/security-alerts/cpuoct2025.html</a>, and assigned CVE-2025-53057 for this vulnerability.</li>
+</ul>
 <h2 id="certificategenerator-and-testcertificates">
   CertificateGenerator and TestCertificates
   
@@ -538,6 +559,7 @@ When a field&rsquo;s ​<code>​is_unidecoding​</code>​ is ​​True​ an
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#fix">Fix</a></li>
     <li><a href="#certificategenerator-and-testcertificates">CertificateGenerator and TestCertificates</a>
       <ul>
         <li><a href="#file-description">File Description</a></li>
